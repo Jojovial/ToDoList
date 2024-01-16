@@ -13,10 +13,10 @@ def index():
 @app.route("/add", methods=["POST"])
 def add():
     todo = request.form['todo']
-    todos.append[{"task": todo, "done": False}]
+    todos.append({"task": todo, "done": False})
     return redirect(url_for("index"))
 
-@app.route("/edit/<:int:index>", methods=["GET", "POST"])
+@app.route("/edit/<int:index>", methods=["GET", "POST"])
 def edit(index):
     todo = todos[index]
     if request.method == "POST":
